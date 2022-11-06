@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-    private String nome;
-    private String cpf;
-    private LocalDate dataNascimento;
+    private final String nome;
+    private final String cpf;
+    private final LocalDate dataNascimento;
     private Endereco endereco;
     private final List<Conta> contas = new ArrayList<>();
 
@@ -43,5 +43,14 @@ public class Cliente {
 
     public void adicionarConta(Conta conta) {
         this.contas.add(conta);
+    }
+
+    public Conta buscarContaPorNumero(int numero) {
+        for (Conta conta: this.contas) {
+            if (conta.getNumero() == numero) {
+                return conta;
+            }
+        }
+        return null;
     }
 }

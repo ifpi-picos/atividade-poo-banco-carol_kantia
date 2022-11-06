@@ -1,10 +1,10 @@
 package entidades;
 
 abstract public class Conta {
-    private int agencia;
-    private int numero;
+    private final int agencia;
+    private final int numero;
     private double saldo;
-    private Cliente cliente;
+    private final Cliente cliente;
     private Notificacao notificacao;
 
     public Conta(int agencia, int numero, double saldo, Cliente cliente, Notificacao notificacao) {
