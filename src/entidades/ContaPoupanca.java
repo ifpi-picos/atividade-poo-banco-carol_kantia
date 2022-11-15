@@ -8,10 +8,13 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
-    public void transfere(double valor, Conta contaDestino) {
-        double taxa = this.getSaldo() * 0.05;
-        double valorFinal = taxa + valor;
-        super.transfere(valorFinal, contaDestino);
+    public  void transfere(double valor, Conta contaDestino) {
+        double taxa = valor * 0.05;
+        double valorSaque = taxa + valor;
+        if(sacar(valorSaque)){
+            contaDestino.depositar(valor);
+        }
+
     }
 
     @Override
